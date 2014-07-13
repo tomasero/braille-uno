@@ -50,7 +50,7 @@ String chars[] = {"a", "100000",
                   "=", "111111"
                 };          
  
-void setup() {                
+void setup() {
   Serial.begin(4800);
   for (int i=0; i < PIN_COUNT; i++){     
     pinMode(braillePins[i], OUTPUT); // Set all pins as an output     
@@ -96,7 +96,7 @@ void convertStringToBraille( String text ) {
      delay(refreshSpeed);
      String braille = getBrailleEquivalent(currentChar+32);   
      sendBinaryToArduino(braille);
-   } else if(currentChar>='0' && currentChar<='1'){
+   } else if(currentChar>='0' && currentChar<='9'){
      Serial.print("NUMB: ");
      Serial.println(currentChar);
      sendBinaryToArduino(number);
